@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Introduction</title>
+    <!-- <style>
+        *{
+            background-color: black;
+            color: white;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- <div id="title" class="bg-black">
+        <h1 class="heading">DOM Learning</h1>
+        <p>Hello World</p>
+    </div> -->
+    <!-- <div class="parent">
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+    </div> -->
+    <ul class="lang">
+        <li>Js</li>
+    </ul>
+</body>
+<script>
+    // const p=document.querySelector('.parent')
+    // console.log(p);
+    // console.log(p.children);
+    // console.log(p.children[0]);
+    function addlang(name){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(name))
+        document.querySelector('.lang').appendChild(li)
+    }
+    addlang("python")
+</script>
+</html>
