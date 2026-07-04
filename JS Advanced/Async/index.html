@@ -1,0 +1,59 @@
+<!-- RANDOM COLOR CHANGER  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script></head>
+
+<style>
+
+</style>
+
+<body class="flex items-center flex-col gap-4">
+    <h1 class="font-bold text-2xl">Asynchronous Working</h1>
+    <button id="button" class="border-2 border-black p-1 px-5 rounded hover:bg-green-500 duration-200 ease-in-out hover:text-white hover:cursor-pointer hover:scale-[1.2] hover:border-none">Start</button>
+    <button id="button" class="border-2 border-black p-1 px-5 rounded hover:bg-red-600 duration-200 ease-in-out hover:text-white hover:cursor-pointer hover:scale-[1.2] hover:border-none">Stop</button>
+</body>
+
+<script>
+    //setTimeout() and clearTimeout() Example
+
+    // const timeout=setTimeout(()=>{
+    //     document.querySelector('h1').innerHTML="Hello"
+    // },1000)
+    // document.querySelector('button').addEventListener('click',()=>{
+    //     clearTimeout(timeout)
+    // })
+    
+    // setInterval() Example
+    function randomColor(){
+        let color="0123456789ABCDEF"
+        let colors="#"
+        for(let i=0;i<6;i++){
+            colors+=color[Math.floor(Math.random()*16)]
+        }
+        return colors;
+    }
+    randomColor()
+    document.addEventListener('DOMContentLoaded',()=>{
+        let id=null
+        document.querySelectorAll("button")[0].addEventListener('click',()=>{
+            if(!id){
+                id=setInterval(()=>{
+                    document.body.style.backgroundColor=randomColor()
+                },1000)
+            }
+        },false)
+        document.querySelectorAll("button")[1].addEventListener('click',()=>{
+            if(id){
+                clearInterval(id)
+                id=null
+            }
+        },false)
+    },false)
+     
+</script>
+
+</html>

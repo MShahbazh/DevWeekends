@@ -1,0 +1,85 @@
+<!-- 
+    TOPICS COVERED:
+    Events
+    Async
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+*{
+    background-color: black;
+    margin:0;
+    padding: 0;
+}
+.main-div{
+    margin-top: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,3rem);
+    justify-content: center;
+    justify-items: center;
+    gap: 1rem;
+}
+.main-div>div{
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid white;
+    border-radius: 0.3rem;
+}
+.button{
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: transform 10ms ease-in, background-color 10ms ease-in;
+}
+.button:hover{
+    transform: scale(1.1);
+    background-color: gray;
+}
+</style>
+
+<body>
+    <div class="button">
+        +
+    </div>        
+    <div class="button">
+        -
+    </div>        
+    <div class="main-div">         
+    </div>  
+</body>
+<script>
+    // clicking events
+    document.addEventListener('DOMContentLoaded',(e)=>{
+        e.preventDefault()
+        e.stopPropagation()
+        document.getElementsByClassName('button')[0].addEventListener('click',()=>{
+            let div=document.createElement('div');
+            document.querySelector('.main-div').appendChild(div);
+        },false)
+        document.getElementsByClassName('button')[1].addEventListener('click',()=>{
+            let div=document.getElementsByClassName('main-div')[0];        
+            div.removeChild(div.lastElementChild)
+            
+        },false)
+    },false)
+</script>
+
+</html>
