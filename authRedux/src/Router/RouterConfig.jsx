@@ -1,7 +1,7 @@
-import {createBrowserRouter, createRoutesFromElements, Route} from "react-router-dom"
+import {createBrowserRouter,createHashRouter, createRoutesFromElements, Route} from "react-router-dom"
 import { Dashboard, Login } from "../components"
 
-const router=createBrowserRouter(
+const router=createHashRouter(
     createRoutesFromElements(
         <Route>
             <Route path="/" element={<Login/>}/>
