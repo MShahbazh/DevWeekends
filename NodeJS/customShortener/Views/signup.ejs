@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body >
+    <form class="p-8 gap-5  flex justify-center items-start flex-col bg-teal-800" action="/user" method="post">
+        <label for="" class="text-white pt-3">Full Name</label>
+        <input class="text-white py-2 px-4 border border-white outline-none focus-none" type="text" required name="name">
+        <label for="" class="text-white pt-3">Email</label>
+        <input class="text-white py-2 px-4 border border-white outline-none focus-none" type="text" required name="email">
+        <label for="" class="text-white pt-3">Password</label>
+        <input class="text-white py-2 px-4 border border-white outline-none focus-none" type="text" required name="password">
+        <button type="submit" class="py-2 px-4 bg-black text-white cursor-pointer">SignUp</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Server</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="bg-teal-600 font-bold text-white flex items-center justify-center p-7 text-2xl">
+        <h1>
+            Hello to the Manual Server!
+        </h1>
+    </div>
+    <div id="btns" class=" flex items-center justify-center flex-col gap-2 p-5">
+        <button class="text-white bg-black px-5 py-3 font-bold cursor-pointer hover:scale-105 hover:bg-black/60 duration-300">Check Status</button>
+        <button class="text-white bg-black px-5 py-3 font-bold cursor-pointer hover:scale-105 hover:bg-black/60 duration-300">About</button>
+    </div>
+    <div class="w-full h-auto bg-purple-800 text-white  p-5 flex items-center justify-center flex-col gap-5">
+        <h1 class="font-bold text-2xl">
+            Result
+        </h1>
+        <div id="answer" class=" flex items-center justify-center ">
+
+        </div>
+    </div>
+</body>
+<script>
+    const buttonDiv=document.getElementById('btns').children
+    const answer=document.getElementById('answer')
+    for(let i=0;i<buttonDiv.length;i++){
+        buttonDiv[i].addEventListener('click',async(e)=>{
+            let string=""
+            if(i==0){
+                string='check'
+            }
+            else if(i==1){
+                string='about'
+            }
+            try {
+                const data=await fetch(`http://localhost:8000/${string}`)
+                const response=await data.json()
+                answer.textContent=response.result
+            } catch (e) {
+                console.log(e)
+            }
+        })
+    }
+    
+</script>
+</html>
