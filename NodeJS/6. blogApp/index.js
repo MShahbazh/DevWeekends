@@ -9,7 +9,7 @@ import Blog from './models/blog.js'
 
 const app=express()
 const PORT=8000
-mongoose.connect("mongodb+srv://ADMINUSER_db_user:MONGODBATLASPASSWORD@cluster0.k1idylo.mongodb.net/?appName=Cluster0").then(()=>console.log("Database Connected"))
+mongoose.connect("mongodb+srv://ADMINUSER_db_user:RANDOM@cluster0.k1idylo.mongodb.net/?appName=Cluster0").then(()=>console.log("Database Connected"))
 
 
 app.use(express.urlencoded({extended:false}))
